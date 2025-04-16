@@ -2,7 +2,8 @@ provider "aws" {
   region = "eu-west-1"
 }
 
-# Customize with your own s3 bucket and dynamoDB table if you want to use Remote Backend for State
+# Customize with your own S3 bucket and DynamoDB table if you want to use a Remote Backend for State
+# If not, comment the following lines
 terraform {
   backend "s3" {
     bucket         = "terraform-tfstate-playingaws-poc"     # Update it 
@@ -24,6 +25,6 @@ resource "aws_budgets_budget" "zero_spend_budget" {
     threshold                  = 0
     threshold_type             = "ABSOLUTE_VALUE"
     notification_type          = "ACTUAL"
-    subscriber_email_addresses = ["alcalex@gmail.com"]
+    subscriber_email_addresses = ["your_email@domain.com"]
   }
 }

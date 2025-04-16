@@ -38,3 +38,7 @@ jobs:
       # Deploy terraform changes
       - name: Terraform Apply
         run: terraform apply -auto-approve
+
+      # Destroy terraform resources (uncomment lines below)
+      # - name: Terraform Destroy
+      #   run: terraform destroy -auto-approve
